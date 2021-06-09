@@ -4,4 +4,4 @@ body {
   background-size:cover;
   background-repeat:no-repeat}
 p {color:white;
-  filter:drop-shadow(3px 3px 3px #333)}
+  filter:drop-shadow(3px 3px 3px #333);text-indent:4px;margin-left:10px}
