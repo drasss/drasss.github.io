@@ -47,6 +47,6 @@ while ans!="end" and ans!="stop":
             print("\n                     "+dodrink[rand])
       if ans=="3 ":
             print("\n                     enlèves un vetement")
-      if ans=="4":
+      if ans=="4 ":
             print("\n                     qui est ton crush?")
       i+=1
