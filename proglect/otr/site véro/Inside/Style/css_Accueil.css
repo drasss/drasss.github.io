@@ -1,0 +1,113 @@
+/*----- entête -----*/
+.ent h1 {color: #DD9955;
+filter:drop-shadow(1px 1px 1px #F90);
+width:910px;
+position:absolute;
+top:0px;
+left:5px;
+margin-top:40px;}
+
+.ent img {display:block;
+margin-left:auto;
+margin-right:auto;
+
+width:100px}
+	
+.compte {background-color:white;
+position:absolute;
+top:5px;
+right:5px;
+padding:25px;
+border-radius:7px;
+border:solid;
+border-width:4px;
+border-color:#FFBC55;
+height:60px}
+
+/*----- menu -----*/
+li.here {background-color:FFCC77;
+border-radius:100px}
+
+#menu ul li { display: inline-block;
+font-size: 22px;
+text-decoration: none;
+font-family: URW Palladio;
+margin-top:20px;
+margin-right:10px}
+
+#menu {background-color:#FFBC55;
+border-radius:10px;
+padding-bottom:2px;
+}
+
+#menu ul li a {text-decoration:none;
+padding:5px;
+border-radius:5px;
+color:#444400}
+
+#menu ul li a:hover{text-decoration:underline;}
+
+/*----- Boutique -----*/
+
+p.boutique-l {position:absolute;
+right:0px;
+padding-right:700px;
+padding-left:20px;
+padding-top:10px;
+padding-bottom:10px;
+background-color: #AFAFDD;
+border-radius:10px 0px 0px 0px;
+font-size:22px}
+
+img#boutique {width:200px;
+padding-top:77px;
+position:absolute;
+right:681px;
+padding-left:30px;
+margin-top:26px;
+padding-right:20px}
+
+img#boutique:hover{border:solid;
+border-radius:10px;
+right:677;
+margin-top:22;
+border-color:#AFAFDD;
+border-width:4px;
+padding-bottom:10px}
+
+/*----- promotions -----*/
+
+.promo {font-size:30px;
+text-decoration:underline;
+margin-top:300px;
+margin-left:20px;}
+
+#promo {background-color:#AFAFDD;
+color:red;
+margin-left:-10px;
+padding-right:12px;
+display:inline-block;
+border-radius:0px 15px 15px 0px;}
+
+#promo ul li { display: inline-block;
+font-size: 22px;
+text-decoration: none;
+font-family: URW Palladio;
+margin-top:20px;
+margin-bottom:10px;
+margin-right:20px;
+border:solid;
+border-color:#5F5F99
+}
+
+#promo ul li p {color:#CCCCFF;
+filter:drop-shadow(1px 1px 1px #333);
+font-size:20px;
+margin: 0px;
+padding-top:20px;
+padding-bottom:20px;
+padding-left:5px;}
+
+#promo ul li a { text-decoration:none;}
+
+#promo ul li img {width:200px}
