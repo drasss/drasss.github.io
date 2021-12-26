@@ -58,3 +58,14 @@ color:black}
 
 #succes:hover {color:black;
 	border-radius:20px}
+#conv {background-color:50AAFF}
+
+#admin {text-decoration:none;
+color:black;
+background-color:white;
+font-size:30px;
+display:inline-grid;
+border-radius:20px;
+padding:200px 10px;
+margin-top:100px}
+
