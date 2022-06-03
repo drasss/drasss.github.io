@@ -5,58 +5,49 @@
 
   </head>
   <body> <py-script>
-import random,time
-ans="0"
-rand=0
-prand=0
-pers=tuple()
-while ans!="end" and ans!="stop":
-      ans=input("donne le nom d'un joueur (all)(end/stop) ")
-      if ans=="all" or ans=="end" or ans=="stop":
-            print(pers)
-      else:
-            pers+=(ans,)
-print("dans ce jeu, y'a des Jengas, sur chacun est inscrit une catégorie:\n-DRINK (orange) -> tu bois sous certaines circonstances\n-Do or Drink (rouge) -> Fais un gage ou tu bois\n-Just do it (violet) -> juste... Fais ce qui sera choisi\n-Tell me (bleu) -> racontes un peu ta vie... Mais t'as bu, tu ne peux pas mentir\n choisis le jenga a faire tomber sagement... Ou perds et affrontes un sort de chaque catégorie")
-random.seed(time.time())
-ans="0"
-i=0
-time.sleep(2)
-while ans!="end" and ans!="stop":
-      if i==(len(pers)):
-            i=0
-      joueur=pers[i]
-      print("\n----- au tour de :[ "+pers[i]+" ] -----\n")
-      prand=random.randint(0,len(pers)-1)
-      while i==prand:
-            prand=random.randint(0,len(pers)-1)
-      Drink=("-Drink","-Take a shot","- Distribue 2 gorgées","- Bois sans les mains !","- Trinque avec "+pers[prand],"Tout le monde bois !","-Cul sec collectif","-Bois un shot fait par "+pers[prand],"-Bois un un verre fait par tout le monde","- Échange ton verre avec ton voisin d’en face et trinque","Donne physiquement à boire à "+pers[prand],"lance un dé","bois "+str(random.randint(1,6))+" gorgées","-Les possesseur de chat boivent !","-Les possesseur de chien boivent !","-Tourne 10 fois sur toi puis bois","-Bois pendant 5s","-le plus jeune bois","-le plus vieux bois","les célibataires boivent","les couples boivent",)
-      dodrink=("- Je n’ai jamais ","-Lit sur les lèvre ","Banni un mot que les autres choisiront","cite 5 objets commencant par "+chr(65+random.randint(0,25)),"cite 5 animaux commencant par "+chr(65+random.randint(0,25)),"cite 5 pays commencant par "+chr(65+random.randint(0,25)),"épèle un mot choisi par les autres","Fait l’inverse de tout ce que te dit "+pers[prand],"-Trouve 3 objets le plus rapidement commençant par "+chr(65+random.randint(0,25)),"-Trouve 3 objets le plus rapidement de couleur choisie","-Fait une phrase avec 3 mots choisis par "+pers[prand],"fais deviner quelque chose en déssinant les yeux fermés","-Tente de reconnaître un objet les yeux fermés choisi par "+pers[prand],"-récite l’alphabet à l’envers","-dit 2 vérités et un mensonge ",)
-      JDI=("-Chante avec de l’eau !","-	Mange un aliment les yeux fermés, choisi par "+pers[prand],"enlèves un vetement","Prochain tour tu joue les yeux bandés ","Et un glaçon, un !","-Échange ton verre avec ton voisin de Droite","-Échange ton verre avec ton voisin de Gauche","Échange ton verre avec ton voisin d’en face ","Créer un cocktail à qui tu veux !",pers[prand]+" fait ton verre !","-Raconte ta dernière journée en détails","Raconte un fait palpitant","-Mains attachées pour le prochain tour","-Chaussettes sur tes mains pendant 2 tours","-Dit pourquoi tu dois quitter "+pers[prand],"-Lit les lignes de vies de "+pers[prand]+" et raconte ce qui va lui arriver","-group photo !","action ou vérité")
-      TM=("ta couleur,ta saison et ton animal préféré","qui est ton crush?","de quelle couleur sont tes sous-vetements ?","sur quel star as-tu un crush","qui est ta waifu ?","hobby favoris ?","boisson préférée ?","si tu dois tuer l'un d'entre nous qui tuerais-tu ?","si tu dois changer de corps avec l'un d'entre nous, avec qui et pourquoi ?")
-      ans=input("1)Drink 2)Do or Drink 3)Just DO IT 4)Tell me 5)Joker\n ")
-      if ans=="end" or ans=="stop":
-            print(pers[i]+" a perdu\n")
-      if ans=="1" or ans=="end" or ans=="stop":
-            rand=random.randint(0,len(Drink)-1)
-            print("\n                     "+Drink[rand])
-      if ans=="2" or ans=="end" or ans=="stop":
-            rand=random.randint(0,len(dodrink)-1)
-            print("\n                     "+dodrink[rand])
-      if ans=="3" or ans=="end" or ans=="stop":
-            rand=random.randint(0,len(JDI)-1)
-            print("\n                     "+JDI[rand])
-      if ans=="4" or ans=="end" or ans=="stop":
-            rand=random.randint(0,len(TM)-1)
-            print("\n                     "+TM[rand])
-      if ans=="1 ":
-            print("\n                     bois 6 gorgées")
-      if ans=="2 ":
-            rand=random.randint(0,len(dodrink)-1)
-            print("\n                     "+dodrink[rand])
-      if ans=="3 ":
-            print("\n                     enlèves un vetement")
-      if ans=="4 ":
-            print("\n                     qui est ton crush?")
-      i+=1
+#ce programme calcule la note de chacunes des matieres par rapport a mes moyennes au semestre
+
+#----------------initialisation---------------------
+ecart=(0.0,0.25,0.5,0.75,1.0,1.25,1.5,1.75,2.0,2.25,2.5,2.75,3.0,3.25,3.5,3.75,4.0,4.25,4.5,4.75,5.0,5.25,5.5,5.75,6.0,6.25,6.5,6.75,7.0,7.25,7.5,7.75,8.0,8.25,8.5,8.75,9.0,9.25,9.5,9.75,10.0,10.25,10.5,10.75,11.0,11.25,11.5,11.75,12.0,12.25,12.5,12.75,13.0,13.25,13.5,13.75,14.0,14.25,14.5,14.75,15.0,15.25,15.5,15.75,16.0,16.25,16.5,16.75,17.0,17.25,17.5,17.75,18.0,18.25,18.5,18.75,19.0,19.25,19.5,19.75,20)
+
+CA=float(input("moyenne de complement d'analyse\n"))
+ANOVA=float(input("moyenne de Regression\n"))
+MS=float(input("moyenne de Méthodes Stats\n"))
+TP=float(input("moyenne de Test non-paramétrique\n"))
+
+noteCA=(CA-0.4*7.5)/0.6
+
+if noteCA>7.5:
+      noteCA=CA
+if TP<13.5:
+      noteTP=(TP-0.8*13.5)/0.2
+else:
+      noteTP=(TP-0.2*13.5)/0.8
+
+noteMS=(MS-0.3*17)/0.7
+
+noteRL1=3*(ANOVA-(19.5/3+19/3))
+noteRL2=(ANOVA-(19.5*0.15+19*0.15))/0.7
+noteRL=max(noteRL1,noteRL2)
+
+MN=float(input("moyenne de Methodes Numériques\n"))
+
+
+valuescc=tuple()
+valuespt=tuple()
+for i in range(len(ecart)):
+      for j in range(len(ecart)):
+            test=16*0.15+ecart[i]*0.15+0.7*ecart[j]
+            if test==MN:
+                  valuescc+=(ecart[i],)
+                  valuespt+=(ecart[j],)
+print("note Complement d'analyse: ",noteCA)
+print("note LEVI: ",noteTP)
+print("note Warnault: ",noteMS)
+print("note ANOVA: ",noteRL)
+print("note Methodes num: ")
+print(valuescc)
+print(valuespt)
+
   </py-script> </body>
 </html>
