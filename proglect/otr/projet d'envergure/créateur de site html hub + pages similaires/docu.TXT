@@ -1,3 +1,0 @@
-(Titre1;https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.wealthmanagement.com%2Fsites%2Fwealthmanagement.com%2Ffiles%2Fstandardized-tests-promo.jpg&f=1&nofb=1;hello world)#
-(Titre2;https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.wealthmanagement.com%2Fsites%2Fwealthmanagement.com%2Ffiles%2Fstandardized-tests-promo.jpg&f=1&nofb=1;hello world)#
-(Titre3;https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.wealthmanagement.com%2Fsites%2Fwealthmanagement.com%2Ffiles%2Fstandardized-tests-promo.jpg&f=1&nofb=1;hello world)#
