@@ -1,0 +1,3 @@
+2n=p+q.txt
+droite_biaisée.txt
+test.txt
