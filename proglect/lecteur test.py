@@ -1,26 +1,21 @@
-import os.path,os,time
-#recuperation des noms de musiques dans un fichier txt (a cause de l'enodage UTF-8 on peut pas faire une seule commande)
-#expliquant les "encoding="utf-8""
-os.system("start recupmp3.bat")
-#lecture des noms du fichier txt dans une variable
-lect=open("recup.txt","r",encoding="utf-8")
-noms=lect.read()+"₾"
-#séparation des noms dans un tuple
-tab=("",)
-i,j=0,0
-st=""
-#tant que le fichier n'est pas fini(
-#     tant que le fichier n'est pas fini et qu'il n'y a pas de retour a la ligne(
-#           lire la lettre et l'ajouter dans le str qui conserve la phrase)
-#     prendre la phrase et la rajouter dans le tableau (puis repartir de 0))
-while noms[i]!="₾":
-      
-      while (noms[i]!="." or noms[i+1]!="m" or noms[i+2]!="p" or noms[i+3]!="3") and noms[i]!="₾":
-            st+=noms[i]
-            i+=1
-      tab+=(st,)
-      st=""
-      i+=5
+#E:\perso\telechargement\audacity\proglect
+
+import os.path,os,time,urllib.parse
+import numpy as np
+
+path=".." #attention le \ est ajouté automatiquement
+
+def get_folder(path=path):
+    tab=[]
+    content=os.listdir(path)
+    for i in content:
+        if ".mp3" in i:
+            tab+=[path+"""\\"""+i]
+        elif not("." in i):
+            tab+=list(get_folder(path+"""\\"""+i))
+    return tab
+
+
 #exriture du fichier html
 fichier=open("lecteur.html","w",encoding="utf-8")
 fichier.write("<html><style type=\"text/css\" media=\"all\">@import \"css.css\";</style>\n")
@@ -33,10 +28,22 @@ fichier.write("")#
 #mise en place des sons
 fichier.write("\n</head><body>\n")
 #pour ne pas utiliser de variable j utiliser "i+1" 
-for i in range(len(tab)-1):
-      fichier.write("<p>"+tab[i+1]+"</p>\n")
-      fichier.write("<audio controls=\"\" preload=\"none\" loop=\"true\"><source src=\"..\mp3\\"+tab[i+1]+".mp3\" type=\"audio/mpeg\"></audio>")
+
+
+tab_init=get_folder(path)
+
+dtype=[('path', '<U121'), ('name', '<U121')]
+
+tab_4=np.rot90(np.array((tab_init,tab_init)))
+for i in range(len(tab_4)):
+    tab_4[i,1]=tab_4[i,1].split("\\")[-1][:-4]
+tab_unsorted=np.array(tab_4,dtype=dtype)
+
+tab=np.sort(tab_unsorted,order="name")[::-1]
+
+for i in range(len(tab)):
+    fichier.write("<p>"+tab[i,1][0]+"</p>\n")
+    fichier.write("<audio controls=\"\" preload=\"none\" loop=\"true\"><source src=\""+os.path.split(tab[i,0][0])[0]+"\\"+urllib.parse.quote(tab[i,1][0])+"\"  type=\"audio/mpeg\"></audio>") #urllib.parse.quote() sert a transformer le char en url
 fichier.write("</body>\n</html>\n")
 fichier.close()
-time.sleep(0.5)
-os.system("start lecteur.html")
+#os.system("start lecteur.html")
