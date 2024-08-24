@@ -2,6 +2,7 @@
 
 import os.path,os,time,urllib.parse
 import numpy as np
+import pandas as pd
 
 path=".." #attention le \ est ajouté automatiquement
 
@@ -31,19 +32,16 @@ fichier.write("\n</head><body>\n")
 
 
 tab_init=get_folder(path)
-
-dtype=[('path', '<U121'), ('name', '<U121')]
-
 tab_4=np.rot90(np.array((tab_init,tab_init)))
 for i in range(len(tab_4)):
     tab_4[i,1]=tab_4[i,1].split("\\")[-1][:-4]
-tab_unsorted=np.array(tab_4,dtype=dtype)
+tab_unsorted=np.array(tab_4)
 
-tab=np.sort(tab_unsorted,order="name")[::-1]
+tab=pd.DataFrame(tab_unsorted).sort_values(1).drop_duplicates(1).to_numpy()
 
 for i in range(len(tab)):
-    fichier.write("<p>"+tab[i,1][0]+"</p>\n")
-    fichier.write("<audio controls=\"\" preload=\"none\" loop=\"true\"><source src=\""+tab[i,0][0]+"\"  type=\"audio/mpeg\"></audio>") #urllib.parse.quote() sert a transformer le char en url
+    fichier.write("<p>"+tab[i,1]+"</p>\n")
+    fichier.write("<audio controls=\"\" preload=\"none\" loop=\"true\"><source src=\""+tab[i,0]+"\"  type=\"audio/mpeg\"></audio>") #urllib.parse.quote() sert a transformer le char en url
 fichier.write("</body>\n</html>\n")
 fichier.close()
 #os.system("start lecteur.html")

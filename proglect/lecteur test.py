@@ -43,7 +43,7 @@ tab=np.sort(tab_unsorted,order="name")[::-1]
 
 for i in range(len(tab)):
     fichier.write("<p>"+tab[i,1][0]+"</p>\n")
-    fichier.write("<audio controls=\"\" preload=\"none\" loop=\"true\"><source src=\""+os.path.split(tab[i,0][0])[0]+"\\"+urllib.parse.quote(tab[i,1][0])+"\"  type=\"audio/mpeg\"></audio>") #urllib.parse.quote() sert a transformer le char en url
+    fichier.write("<audio controls=\"\" preload=\"none\" loop=\"true\"><source src=\""+tab[i,0][0]+"\"  type=\"audio/mpeg\"></audio>") #urllib.parse.quote() sert a transformer le char en url
 fichier.write("</body>\n</html>\n")
 fichier.close()
 #os.system("start lecteur.html")
