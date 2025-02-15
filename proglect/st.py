@@ -6,7 +6,7 @@ st.set_page_config(layout="wide")
  
 #--------------------- Recursion mp3
 path="..\\mp3\\"
-st.text(os.path.exists(path))
+st.text(os.listdir("..\\"))
 paths=[]
 def recu(path):
     global paths
