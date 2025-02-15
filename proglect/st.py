@@ -10,9 +10,9 @@ st.set_page_config(layout="wide")
 st.text(os.listdir("mp3/"))
 
 if "mp3" in os.listdir():
-    path="mp3\\"
+    path="mp3/"
 else:
-    path="..\\mp3\\"
+    path="../mp3/"
 
 paths=[]
 def recu(path):
