@@ -22,12 +22,12 @@ def recu(path):
         if liste[i][-4:]==".mp3":
             paths+=[path+liste[i]]
         else:
-            recu(path+liste[i]+"\\")
+            recu(path+liste[i]+"/")
     return paths
 data=recu(path)
 titles=[]
 for i in range(len(data)):
-    titles+=[data[i].split("\\")[-1][:-4]]
+    titles+=[data[i].split("/")[-1][:-4]]
  
 #--------------------- Streamlit
     #----------------- Sidebar
