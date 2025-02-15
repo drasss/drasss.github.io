@@ -7,6 +7,7 @@ st.set_page_config(layout="wide")
 #--------------------- Recursion mp3
 
 st.text(os.listdir())
+st.text("mp3" in os.listdir())
 
 if "mp3" in os.listdir():
     path="mp3\\"
