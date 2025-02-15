@@ -5,7 +5,7 @@ import random
 st.set_page_config(layout="wide")
  
 #--------------------- Recursion mp3
-path="mp3\\mp3\\mp3\\"
+path="..\\mp3\\"
 paths=[]
 def recu(path):
     global paths
