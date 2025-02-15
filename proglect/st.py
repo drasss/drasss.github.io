@@ -9,7 +9,7 @@ path="..\\mp3\\"
 paths=[]
 def recu(path):
     global paths
-    print(os.path.exists(path))
+    st.text(os.path.exists(path))
     liste=os.listdir(path)
     for i in range(len(liste)):
         if liste[i][-4:]==".mp3":
