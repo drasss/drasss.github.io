@@ -1,5 +1,5 @@
 body {background-color:#222244;
-background-image: url("img/backgroung.jfif");
+background-image: url("E:/perso/Musiques/git/drasss.github.io/proglect/img/background2.jpg");
 background-attachment:fixed;
 background-size:cover;
 background-repeat:no-repeat}
@@ -26,7 +26,7 @@ filter: drop-shadow(2px 3px 3px #333);}
 audio:focus::-webkit-media-controls-panel {background-color:#cccfe8;
 color:white;}
 audio:hover::-webkit-media-controls-play-button {filter:drop-shadow(2px 3px 3px #333);}
-audio::-webkit-media-controls-play-button {background-color:#37474c;
+audio::-webkit-media-controls-play-button {background-color:#666053;
 border-radius:100px;
 width:20px}
 audio::-webkit-media-controls-timeline {padding-left:400px;width:100px}
