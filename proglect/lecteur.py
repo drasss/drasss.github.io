@@ -34,7 +34,7 @@ fichier.write("\n</head><body>\n")
 tab_init=get_folder(path)
 tab_4=np.rot90(np.array((tab_init,tab_init)))
 for i in range(len(tab_4)):
-    tab_4[i,1]=tab_4[i,1].split("\\")[-1][:-4]
+    tab_4[i,1]=tab_4[i,1].split("\\")[-1][:-4].capitalize() #pour ne pas utiliser de variable j utiliser "i+1"
 tab_unsorted=np.array(tab_4)
 
 tab=pd.DataFrame(tab_unsorted).sort_values(1).drop_duplicates(1).to_numpy()
