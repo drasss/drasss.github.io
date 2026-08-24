@@ -10,7 +10,7 @@ def get_folder(path=path):
     tab=[]
     content=os.listdir(path)
     for i in content:
-        if ".mp3" in i:
+        if (".mp3" in i) or ".wav" in i:
             tab+=[path+"""\\"""+i]
         elif not("." in i):
             tab+=list(get_folder(path+"""\\"""+i))
